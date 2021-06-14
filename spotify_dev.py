@@ -1,9 +1,9 @@
 import requests
 
-ACCESS_TOKEN = 'BQB3_kVTBrJmb-AHv0NV1kPetVdZz4CcFgPYQOiYd9HXbjRjLe2O-1cg-na4WGKqD2vrljpcyDGBQwC9KMosIsA-51QAJcJAR0ea6rATSobLkKpEAcgXq7Bh-V8-CUYVrHpXS1xdTnlYVWizt444ZS68D1n7wP886OrDaiMXAb6B7_1BoP9ecTz3uHNHKzr57XOWeONBe6mhmfe9emZbZn9ZaS6LA3o2lWtMOgkv'
+ACCESS_TOKEN = '{OAuth Token}'
 
 def create_playlist_onSpotify(name, public):
-    SPOTIFY_CREATE_PLAYLIST_URL = 'https://api.spotify.com/v1/users/tuigwtwn64zr2w68wsd1p96hy/playlists'
+    SPOTIFY_CREATE_PLAYLIST_URL = 'https://api.spotify.com/v1/users/{user_ID}/playlists'
     response = requests.post(
         SPOTIFY_CREATE_PLAYLIST_URL,
         headers = {
