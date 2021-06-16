@@ -1,9 +1,9 @@
 import requests
 
-ACCESS_TOKEN = '{OAuth Token}'
+ACCESS_TOKEN = 'BQDi9S49Dq7s4KkJ94Y2lG_czl6Bh5NJzDlqI8t3xit5n7vliNXXdpH2BcPNxMjtqF4oj9mC5v5n1k8Bee4ZTlX9P1DwMxipmWY-8EQk1IwgQF3b_IyA9_E7KXRNT41AZnLRgPX1Efq8_ho-tOSdMWIMbPgmdDt2tJNbMf7SVDfi_aNI7WEjvHGzzaPH6peY-p4xRxCttGQqcig-i5PG1GRlBTOAVTKZNZ8b8fwA'
 
 def create_playlist_onSpotify(name, public):
-    SPOTIFY_CREATE_PLAYLIST_URL = 'https://api.spotify.com/v1/users/{user_ID}/playlists'
+    SPOTIFY_CREATE_PLAYLIST_URL = 'https://api.spotify.com/v1/users/tuigwtwn64zr2w68wsd1p96hy/playlists'
     response = requests.post(
         SPOTIFY_CREATE_PLAYLIST_URL,
         headers = {
@@ -57,7 +57,9 @@ def search_spotify():
     tracks_uri = []
     count = 1
     for track in tracks:
-        print(f"{count}. {track['name']}")
+        print(f"{count}. {track['name']} -> ", end = "")
+        for j in range(len(track['artists'])):
+            print(f"{track['artists'][j]['name']}") if (j == len(track['artists'])-1) else print(f"{track['artists'][j]['name']}, ", end = "")
         tracks_uri.append(track['uri'])
         count += 1
     return tracks_uri    
